@@ -8,6 +8,7 @@ type CustomImageProps = {
   w: number;
   h: number;
   tr?: boolean;
+  loading?: 'eager' | 'lazy';
 };
 
 const CustomImage = (props: CustomImageProps) => {
@@ -19,6 +20,7 @@ const CustomImage = (props: CustomImageProps) => {
       width={props.w}
       height={props.h}
       className={props.className}
+      loading={props.loading}
       {...(props.tr && {
         transformation: [{ width: props.w, height: props.h }],
       })}
